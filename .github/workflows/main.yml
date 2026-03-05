@@ -6,7 +6,7 @@ on:
 
 jobs:
   short-test:
-    name: Short Test (1 minute)
+    name: Short Test (10 seconds)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,11 +15,11 @@ jobs:
       - name: Run quick test
         run: |
           echo "🚀 Starting quick test..."
-          sleep 60
+          sleep 10
           echo "✅ Quick test complete!"
 
   medium-test:
-    name: Medium Test (3 minutes)
+    name: Medium Test (15 seconds)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,11 +28,11 @@ jobs:
       - name: Run medium test
         run: |
           echo "🚀 Starting medium test..."
-          sleep 180
+          sleep 15
           echo "✅ Medium test complete!"
 
   long-test:
-    name: Long Test (5 minutes)
+    name: Long Test (20 seconds)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -46,5 +46,5 @@ jobs:
       - name: Run long test
         run: |
           echo "🚀 Starting long test with Node.js..."
-          sleep 300
+          sleep 20
           echo "✅ Long test complete!"
