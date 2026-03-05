@@ -1,0 +1,50 @@
+name: Carbon Test Workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  short-test:
+    name: Short Test (1 minute)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Run quick test
+        run: |
+          echo "🚀 Starting quick test..."
+          sleep 60
+          echo "✅ Quick test complete!"
+
+  medium-test:
+    name: Medium Test (3 minutes)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Run medium test
+        run: |
+          echo "🚀 Starting medium test..."
+          sleep 180
+          echo "✅ Medium test complete!"
+
+  long-test:
+    name: Long Test (5 minutes)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Run long test
+        run: |
+          echo "🚀 Starting long test with Node.js..."
+          sleep 300
+          echo "✅ Long test complete!"
